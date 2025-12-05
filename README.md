@@ -1,135 +1,134 @@
-# ganance-ios-assessment
-Short assessment for Ganance iOS Development Candidates
-Ganance iOS Developer Assessment
+# Ganance iOS Developer Assessment
 
-Estimated Time: 1 hour
-Tech Requirements: Swift, SwiftUI, Combine or async/await
-Submission Format: GitHub repo link or zipped Xcode project
+**Estimated Time:** 1 hour  
+**Tech Requirements:** Swift, SwiftUI, Combine or async/await  
+**Submission Format:** GitHub repo link or zipped Xcode project
 
-Overview
+---
 
-This assessment is designed to simulate a lightweight version of the work you would do at Ganance. Since our product involves connecting a mobile app to a hardware device over Bluetooth/BLE, we want to see how you structure code, handle async flows, and manage app state.
+## Overview
 
-You will not need to implement real Bluetooth functionality. Instead, you will simulate a device connection and data sync process using delays and mock data.
+This assessment simulates a lightweight version of the work you would do at Ganance. Our product involves connecting a mobile app to a hardware device over Bluetooth/BLE, so we want to understand how you structure async workflows, handle device-like interactions, and manage app state.
 
-The focus is on clarity, architecture, and your ability to build a simple but realistic mobile flow.
+This challenge **does not** require real Bluetooth functionality. Instead, you will simulate a device connection and data sync using delays and mock data.
 
-Your Task
+The focus is on clarity, architecture, and your ability to build a realistic but simple flow.
+
+---
+
+## Your Task
 
 Build a small SwiftUI app that does the following:
 
-1. Connect to a Simulated Device
+### 1. Connect to a Simulated Device
 
-Create a service that simulates connecting to a wearable device. Requirements:
+Create a service that simulates connecting to a wearable device.
 
-The “connection” should take 2–3 seconds using Task.sleep or any async method.
+**Requirements:**
 
-20% of the time, the connection should fail with an error.
+- The “connection” should take about 2–3 seconds using `Task.sleep` or any async method.
+- **20% of the time, the connection should fail** with a simulated error.
+- Expose this using async/await or a Combine publisher.
 
-Expose this as an async method or a Combine publisher.
+---
 
-2. Fetch Mock Health Data
+### 2. Fetch Mock Health Data
 
-Once "connected," fetch a mock payload that includes:
+Once "connected," fetch a mock payload like:
 
+```json
 {
   "steps": 7342,
   "heartRate": 72,
   "sleepHours": 7.3
 }
+```
 
+### 3. Display the Results in SwiftUI
 
-Use any model structure you’d like.
+Create a simple UI with:
 
-3. Display the Results in SwiftUI
+- A **Connect** button  
+- A **loading** state  
+- A **success** state showing the health data  
+- An **error** state with a retry option  
 
-Create a simple UI that shows:
+UI design does not need to be perfect — clarity is more important than polish.
 
-A “Connect” button
+---
 
-A loading state while connecting
+### 4. Architecture Requirements
 
-A success state with the returned data
+- Use **MVVM** or another clean architectural pattern  
+- Split logic into **service layer** + **view model**  
+- Use **Combine** or **async/await** for async workflows  
 
-An error state with a retry button
+---
 
-4. Architecture Requirements
+### 5. Bonus (Optional)
 
-Use MVVM or another pattern you’re comfortable with
+Only attempt these if you have extra time:
 
-Separate the logic into a service layer and a view model
+- Cache the last successful sync in **UserDefaults**
+- Show a **timestamp** for last sync
+- Add **very lightweight unit tests** for your service or view model
 
-Use either Combine or async/await
+These are optional but helpful.
 
-5. Bonus (Optional, Only if Time Permits)
+---
 
-These are not required but will help us understand your depth:
+## What We're Looking For
 
-Cache the most recent successful data sync in UserDefaults
+We will evaluate:
 
-Add a timestamp to the UI showing when the data was last synced
+- Clear, maintainable architecture  
+- Readable, well-structured code  
+- Thoughtful handling of async workflows  
+- Clean state management (loading, error, success)  
+- Ability to simulate real-world device connectivity challenges  
+- Optional notes explaining decisions (if included)
 
-Add very lightweight unit test coverage for the service or view model
+We are **not** evaluating:
 
-What We’re Looking For
+- Pixel-perfect UI design  
+- Real BLE functionality  
+- Large or complex boilerplate  
+- Over-engineered solutions  
 
-We are evaluating:
+---
 
-Clear, maintainable architecture
+## How to Submit
 
-Clean, readable code
+Choose one of the options below.
 
-Thoughtful handling of async workflows
+### Option 1 — GitHub
 
-Proper management of loading, error, and success states
+- Push your project to GitHub  
+- Send us the repo link  
+- If private, grant access to:  
+  **[INSERT GITHUB USERNAME HERE]**
 
-Ability to simulate real-world device connectivity challenges
+### Option 2 — ZIP File
 
-How you communicate in code comments or a brief README section
+- Zip the Xcode project folder  
+- Email it to: **careers@ganance.com**
 
-We are not evaluating:
+---
 
-Pixel-perfect design
+## Optional: Notes for Review
 
-Real BLE integration
+You may include a short section or comments explaining:
 
-Edge-case perfection
+- Architectural choices  
+- Anything you would improve with more time  
+- How you might adapt this for real BLE communication  
 
-Large amounts of boilerplate or over-engineering
+This is optional.
 
-How to Submit
+---
 
-Please provide one of the following:
+## Thank You
 
-Option 1 — GitHub
-
-Push your project to GitHub (public or private)
-
-Send us the link
-
-If private, grant access to:
-[INSERT GITHUB USERNAME HERE]
-
-Option 2 — ZIP File
-
-Zip the Xcode project folder
-
-Email it to:
-careers@ganance.com
-
-Optional: Notes for Review
-
-If you would like, include a short section explaining:
-
-Architectural choices
-
-Anything you would improve with more time
-
-How you would adapt this code for real BLE communication
-
-This is optional but appreciated.
-
-Thank You
-
-We appreciate the time you’re investing in this assessment.
+We appreciate your time and interest in working with Ganance.  
 We look forward to reviewing your work!
+
